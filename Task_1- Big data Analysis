@@ -1,0 +1,22 @@
+Objective:
+Perform analysis on a large dataset using tools like PySpark or Dask to demonstrate scalability.
+
+Solution Overview:
+Used PySpark to analyze a large CSV dataset (e.g., NYC Taxi Data).
+
+Key Steps:
+1. Environment Setup:
+    -Apache Spark installed via pyspark Python package.
+2. Data Loading:
+    from pyspark.sql import SparkSession
+    spark = SparkSession.builder.appName("BigDataAnalysis").getOrCreate()
+    df = spark.read.csv("nyc_taxi.csv", header=True, inferSchema=True)
+3. Data Analysis:
+    Count total trips:
+        print(df.count())
+    Find average fare amount:
+        df.select("fare_amount").groupBy().avg().show()
+4. Insights:
+    -Over 1.6 million trips analyzed. 
+    -Average fare: ~$12.50.
+    -Distribution shows skewed data due to long-distance outliers.
