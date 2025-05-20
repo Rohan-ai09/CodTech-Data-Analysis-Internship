@@ -1,0 +1,18 @@
+Objective:
+  Create an interactive dashboard using Tableau, Power BI, or Dash.
+
+Tool Used:
+  Power BI
+
+Dataset:
+  Global Superstore Sales Data
+
+Dashboard Features:
+  -Sales and Profit by Region and Segment
+  -Interactive date filters
+  -Drill-down from Country → State → City
+  -KPI cards for Revenue, Quantity Sold, and Average Discount
+
+Insights:
+  -West region had the highest profit margins.
+  -Technology segment performed best overall.
