@@ -20,3 +20,7 @@ Key Steps:
     -Over 1.6 million trips analyzed. 
     -Average fare: ~$12.50.
     -Distribution shows skewed data due to long-distance outliers.
+5.  Deliverable Insights:
+  - The dataset contains a large number of taxi trips.
+  - The average fare amount helps understand general pricing trends.
+  - This scalable analysis is ideal for handling millions of records efficiently using PySpark.
