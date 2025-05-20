@@ -1,0 +1,32 @@
+Objective:
+Perform sentiment analysis on textual data using NLP techniques.
+
+Dataset:
+Amazon Product Reviews
+
+Key Steps:
+1. Preprocessing:
+  import re
+  from nltk.corpus import stopwords
+  from nltk.stem import WordNetLemmatizer
+
+  def clean_text(text):
+      text = re.sub(r"[^a-zA-Z]", " ", text.lower())
+      tokens = text.split()
+      tokens = [WordNetLemmatizer().lemmatize(word) for word in tokens if word not in stopwords.words("english")]
+      return " ".join(tokens)
+2. Vectorization & Modeling:
+  from sklearn.feature_extraction.text import CountVectorizer
+  from sklearn.naive_bayes import MultinomialNB
+  from sklearn.model_selection import train_test_split
+
+  X = vectorizer.fit_transform(cleaned_reviews)
+  y = df['Sentiment']
+
+  X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2)
+
+  model = MultinomialNB()
+  model.fit(X_train, y_train)
+3. Evaluation:
+  Accuracy: ~87%
+  Confusion matrix showed balanced performance
