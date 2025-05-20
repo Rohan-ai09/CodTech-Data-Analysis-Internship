@@ -1,0 +1,27 @@
+Objective:
+Build a regression or classification model to predict outcomes.
+
+Dataset:
+Titanic Dataset (from Kaggle)
+
+Key Steps:
+1. Preprocessing:
+  -Handled missing values in Age and Embarked.
+  -Categorical encoding using pd.get_dummies.
+2.Model Building:
+  from sklearn.ensemble import RandomForestClassifier
+  from sklearn.model_selection import train_test_split
+  from sklearn.metrics import accuracy_score
+
+  X = data.drop("Survived", axis=1)
+  y = data["Survived"]
+
+  X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2)
+
+  model = RandomForestClassifier()
+  model.fit(X_train, y_train)
+  predictions = model.predict(X_test)
+  print("Accuracy:", accuracy_score(y_test, predictions))
+3. Results:
+  Accuracy: ~85%
+  Feature importance showed Sex, Pclass, and Fare were top predictors.
